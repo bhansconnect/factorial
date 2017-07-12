@@ -2,8 +2,8 @@ package factorial_test
 
 import (
 	"math/big"
-	"testing"
 	"runtime"
+	"testing"
 
 	"github.com/bhansconnect/factorial"
 )
