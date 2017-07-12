@@ -1,3 +1,5 @@
+// Package factorial allows for users to calculate the factorial of any int64 in the form of a big.Int.
+// The calculations can be done sequentially or concurrently.
 package factorial
 
 import (
@@ -5,10 +7,10 @@ import (
 	"runtime"
 )
 
-//ParallelFactorial calculates the factorial of n
-//The calculation is done concurrently
-//Creates a go routine for each proc
-//If n < 0, -1 is returned
+// ParallelFactorial calculates the factorial of n.
+// The calculation is done concurrently.
+// A go routine is created for each proc.
+// If n < 0, -1 is returned.
 func ParallelFactorial(n int64) *big.Int {
 	if n == 0 {
 		return big.NewInt(1)
@@ -60,9 +62,9 @@ func multrange(x int64, y int64, out chan<- *big.Int) {
 	out <- total
 }
 
-//Factorial calculates the factorial of n
-//The calculation is done sequentially
-//If n < 0, -1 is returned
+// Factorial calculates the factorial of n.
+// The calculation is done sequentially.
+// If n < 0, -1 is returned.
 func Factorial(n int64) *big.Int {
 	if n == 0 {
 		return big.NewInt(1)
